@@ -60,6 +60,7 @@ userSchema.methods.isValidPassword = async function (password) {
   if (password) {
     return await bcrypt.compare(password, this.password);
   }
+  return false;
 };
 
 userSchema.methods.generateAccessToken = function () {
